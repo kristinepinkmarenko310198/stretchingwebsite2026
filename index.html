@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Стретчинг & Calm Down — Ксенія Старкова</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-2: #FDF4FC;
+    --peach: #FBE9F7;
+    --peach-deep: #F4D3EE;
+    --terracotta: #D63FD9;
+    --terracotta-2: #E97FE6;
+    --ink: #0E0F1A;
+    --ink-2: #3D3F52;
+    --muted: #8B8DA0;
+    --hair: #F0E2ED;
+    --serif: "Plus Jakarta Sans", "Manrope", system-ui, sans-serif;
+    --sans: "Manrope", "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 800; letter-spacing: -0.025em; }
+  ::selection { background: var(--terracotta); color: #fff; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .wrap-narrow { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 245, 239, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(232, 221, 208, 0.6);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 32px; max-width: 1200px; margin: 0 auto;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .brand i { font-style: normal; color: var(--terracotta); font-weight: 800; }
+  .nav-links {
+    display: flex; gap: 28px;
+    font-size: 13.5px; color: var(--ink-2);
+    letter-spacing: 0.02em;
+  }
+  .nav-links a { color: inherit; text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta); color: #fff;
+    padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    text-decoration: none; font-weight: 700;
+    transition: background .2s, transform .2s;
+  }
+  .nav-cta:hover { background: var(--ink); transform: translateY(-1px); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* HERO */
+  .hero {
+    padding: 90px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    color: var(--terracotta); font-weight: 700;
+    background: var(--peach); padding: 8px 16px; border-radius: 999px;
+  }
+  .eyebrow::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--terracotta);
+  }
+  h1.headline {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(48px, 6.6vw, 92px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin: 22px 0 28px;
+    color: var(--ink);
+  }
+  h1.headline .it { font-style: normal; font-weight: 800; color: var(--terracotta); }
+  h1.headline .amp { font-style: normal; font-weight: 800; color: var(--terracotta); }
+  .hero-lede {
+    font-size: 18px; line-height: 1.6; color: var(--ink-2);
+    max-width: 540px; margin: 0 0 36px;
+  }
+  .cta-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--terracotta); color: #fff;
+    padding: 20px 34px; border-radius: 999px;
+    text-decoration: none; font-weight: 700;
+    font-size: 16px; letter-spacing: 0; text-transform: none;
+    transition: all .25s ease;
+    box-shadow: 0 14px 36px -12px rgba(214, 63, 217, 0.45);
+  }
+  .btn-primary:hover {
+    background: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px -10px rgba(14, 15, 26, 0.4);
+  }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: transparent; color: var(--terracotta);
+    padding: 18px 32px; border-radius: 999px;
+    border: 1.5px solid var(--peach-deep);
+    text-decoration: none; font-weight: 700;
+    font-size: 16px;
+    transition: all .25s ease;
+  }
+  .btn-outline:hover { background: var(--peach); border-color: var(--terracotta); }
+  .btn-primary svg { transition: transform .25s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+  .price-tag {
+    font-size: 13.5px; color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .price-tag b { color: var(--ink); font-weight: 600; }
+
+  /* hero image */
+  .hero-img {
+    aspect-ratio: 4/5;
+    border-radius: 32px;
+    background: linear-gradient(160deg, var(--peach), var(--peach-deep));
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(214,63,217,0.25);
+  }
+  .hero-photo {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center 30%;
+  }
+  .hero-img .badge {
+    position: absolute; top: 24px; left: 24px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 999px; padding: 10px 16px;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    color: var(--terracotta); font-weight: 700;
+    z-index: 2;
+  }
+  .hero-img .badge.b2 {
+    top: auto; left: auto; bottom: 56px; right: 24px;
+    color: #fff; background: var(--terracotta);
+  }
+
+  /* SECTION COMMON */
+  section.block { padding: 100px 0; position: relative; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; color: var(--terracotta);
+    background: var(--peach); padding: 8px 16px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .kicker::before {
+    content: ""; display: block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--terracotta);
+  }
+  h2.section-title {
+    font-family: var(--serif);
+    font-weight: 800;
+    font-size: clamp(40px, 5.2vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  h2.section-title .it { font-style: normal; color: var(--terracotta); font-weight: 800; }
+  .section-sub {
+    font-size: 17px; color: var(--ink-2); max-width: 640px;
+    line-height: 1.6;
+  }
+
+  /* WHY — 3 cards */
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: var(--bg-2);
+    border-radius: 28px;
+    padding: 40px 36px 44px;
+    border: 1px solid var(--hair);
+    transition: transform .3s ease, box-shadow .3s ease, background .3s;
+  }
+  .why-card:hover {
+    transform: translateY(-4px);
+    background: var(--peach);
+    box-shadow: 0 24px 48px -20px rgba(214,63,217,0.18);
+  }
+  .why-emoji {
+    width: 64px; height: 64px; border-radius: 20px;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin-bottom: 28px;
+    box-shadow: 0 8px 18px -10px rgba(214,63,217,0.25);
+  }
+  .why-title {
+    font-family: var(--serif);
+    font-size: 26px; line-height: 1.15;
+    margin: 0 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .why-text { color: var(--ink-2); font-size: 15.5px; line-height: 1.6; margin: 0; }
+
+  /* PROBLEMS */
+  .problems-wrap { background: var(--bg-2); color: var(--ink); }
+  .problems-wrap h2.section-title { color: var(--ink); }
+  .problems-wrap h2.section-title .it { color: var(--terracotta); }
+  .problems-wrap .section-sub { color: var(--ink-2); }
+  .problems-wrap .kicker { background: rgba(214,63,217,0.12); color: var(--terracotta); }
+  .problems-wrap .kicker::before { background: var(--terracotta); }
+  .problems-list {
+    margin-top: 56px;
+    display: grid; gap: 0;
+    border-top: 1px solid var(--hair);
+  }
+  .problem {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.4fr;
+    gap: 40px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: baseline;
+    cursor: default;
+    transition: padding .3s ease;
+  }
+  .problem:hover { padding-left: 12px; }
+  .problem:hover .p-num { color: var(--terracotta-2); }
+  .p-num {
+    font-family: var(--serif); font-style: normal;
+    font-size: 28px; color: var(--terracotta);
+    font-weight: 800; line-height: 1;
+    transition: color .3s; letter-spacing: -0.02em;
+  }
+  .p-title {
+    font-family: var(--serif);
+    font-size: 24px; line-height: 1.2; font-weight: 800;
+    color: var(--ink); letter-spacing: -0.02em;
+  }
+  .p-desc { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
+  @media (max-width: 720px) {
+    .problem { grid-template-columns: 60px 1fr; }
+    .p-desc { grid-column: 1 / -1; padding-left: 60px; }
+  }
+
+  /* clean up old lesson-photos strip styles - not used */
+
+  /* lesson card photo frame */
+  .lesson-photo-frame {
+    background: var(--peach);
+    display: block;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+  }
+  .lesson-photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media (max-width: 720px) {
+    .lesson-photo-frame { height: 240px; }
+  }
+
+  /* LESSONS — the showcase cards */
+  .lessons-head {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 800px) { .lessons-head { grid-template-columns: 1fr; gap: 18px; } }
+  .lessons-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 980px) {
+    .lessons-stack { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; gap: 20px; }
+  }
+
+  .lesson-card {
+    background: var(--bg);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--hair);
+    box-shadow: 0 8px 24px -16px rgba(214,63,217,0.18);
+    display: flex;
+    flex-direction: column;
+  }
+  .lesson-header {
+    background: var(--terracotta);
+    padding: 16px 28px;
+    display: flex; align-items: center; gap: 20px;
+    color: #fff;
+  }
+  .lesson-num {
+    font-family: var(--serif); font-style: normal;
+    font-size: 22px; font-weight: 800;
+    opacity: 0.55;
+    letter-spacing: -0.025em;
+  }
+  .lesson-tag {
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    font-weight: 700;
+  }
+  .lesson-body {
+    background: #fff;
+    padding: 28px 26px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .lesson-body .result-box { margin-top: auto; }
+  @media (max-width: 720px) {
+    .lesson-header { padding: 14px 18px; gap: 12px; }
+    .lesson-body { padding: 22px 18px; }
+  }
+  .lesson-title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.55vw, 24px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .lesson-sub {
+    font-family: var(--serif); font-style: normal;
+    font-size: 13.5px; color: var(--terracotta);
+    font-weight: 700;
+    margin: -2px 0 10px;
+  }
+  .lesson-intro {
+    color: var(--ink-2); font-size: 14px; line-height: 1.55;
+    margin: 0 0 18px;
+  }
+  .lesson-list { list-style: none; padding: 0; margin: 0 0 20px; }
+  .lesson-list li {
+    display: grid; grid-template-columns: 16px 1fr; gap: 12px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--hair);
+    font-size: 13.5px; color: var(--ink);
+    line-height: 1.45;
+  }
+  .lesson-list li:last-child { border-bottom: none; }
+  .lesson-list li::before {
+    content: ""; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--terracotta); transform: translateY(2px);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M5 9.5l3 3 5-6' stroke='white' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-size: contain;
+  }
+  .result-box {
+    background: var(--peach);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  .result-label {
+    font-family: var(--serif); font-style: normal;
+    color: var(--terracotta);
+    font-size: 13px; font-weight: 800;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .result-text {
+    color: var(--ink); font-size: 13.5px; line-height: 1.5; margin: 0;
+  }
+  .result-text {
+    color: var(--ink); font-size: 15.5px; line-height: 1.6; margin: 0;
+  }
+
+  /* ABOUT */
+  .about-wrap { background: var(--bg-2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px; align-items: start;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .about-img {
+    aspect-ratio: 3/4;
+    border-radius: 28px;
+    background-image: url("kseniia-portrait.jpg");
+    background-size: cover;
+    background-position: center top;
+    position: relative; overflow: hidden;
+    box-shadow: 0 24px 48px -24px rgba(214,63,217,0.3);
+  }
+  .about-name {
+    font-family: var(--serif); font-weight: 800;
+    font-size: clamp(44px, 5.2vw, 72px);
+    line-height: 1;
+    margin: 0 0 14px;
+    letter-spacing: -0.035em;
+  }
+  .about-name .it { font-style: normal; color: var(--terracotta); font-weight: 800; }
+  .about-loc {
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    color: var(--muted); margin-bottom: 22px; font-weight: 600;
+  }
+  .about-role {
+    font-family: var(--serif); font-style: normal;
+    font-size: 20px; color: var(--terracotta); font-weight: 700;
+    margin-bottom: 28px;
+  }
+  .about-text {
+    color: var(--ink-2); font-size: 16px; line-height: 1.7;
+    margin: 0 0 18px;
+  }
+  .stat-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; margin-top: 56px;
+    padding-top: 44px; border-top: 1px solid var(--hair);
+  }
+  .stat-num {
+    font-family: var(--serif); font-weight: 800;
+    font-size: clamp(48px, 5.8vw, 76px);
+    color: var(--terracotta);
+    line-height: 1; margin-bottom: 14px;
+    letter-spacing: -0.04em;
+  }
+  .stat-label {
+    font-size: 15px; letter-spacing: 0; text-transform: none;
+    color: var(--ink-2); font-weight: 500;
+  }
+
+  /* MOM STORY */
+  .mom-grid {
+    display: grid; grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px; align-items: center;
+  }
+  @media (max-width: 900px) { .mom-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .mom-img {
+    aspect-ratio: 3/2;
+    border-radius: 28px;
+    background-image: url("mom-portrait.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 24px 48px -24px rgba(214,63,217,0.3);
+  }
+  .mom-img .age-chip {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--terracotta); color: #fff;
+    padding: 12px 20px; border-radius: 999px;
+    font-family: var(--serif); font-style: normal;
+    font-size: 20px; font-weight: 800; line-height: 1;
+    letter-spacing: -0.02em;
+    box-shadow: 0 8px 20px -8px rgba(214,63,217,0.5);
+  }
+  .pull {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.05; font-weight: 800;
+    color: var(--ink); margin: 0 0 28px;
+    letter-spacing: -0.03em;
+  }
+  .pull .it { font-style: normal; color: var(--terracotta); font-weight: 800; }
+  .mom-body p { color: var(--ink-2); font-size: 16px; line-height: 1.7; margin: 0 0 16px; }
+  .mom-tag {
+    margin-top: 24px;
+    display: inline-block;
+    background: var(--peach);
+    border-radius: 16px;
+    padding: 18px 24px;
+    font-family: var(--serif); font-style: normal; font-weight: 700;
+    color: var(--ink); font-size: 17px; line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  /* payment CTA */
+  .pay-cta {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 56px;
+    align-items: center;
+    background: linear-gradient(155deg, var(--peach), var(--peach-deep));
+    border-radius: 32px;
+    padding: 56px;
+  }
+  .pay-title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.05;
+    color: var(--ink);
+    margin: 18px 0 18px;
+  }
+  .pay-title .it { font-style: normal; color: var(--terracotta); font-weight: 800; }
+  .pay-lede {
+    font-size: 17px; line-height: 1.7; color: var(--ink-2);
+    max-width: 520px; margin: 0 0 32px;
+  }
+  .pay-lede strong { color: var(--ink); font-weight: 700; }
+  .pay-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .pay-cta .btn-outline { border-color: rgba(214,63,217,0.35); background: rgba(255,255,255,0.55); }
+  .pay-cta .btn-outline:hover { background: #fff; border-color: var(--terracotta); }
+  .pay-methods { display: flex; flex-direction: column; gap: 16px; }
+  .pay-method {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 18px; padding: 18px 20px;
+  }
+  .pay-method-ic {
+    width: 52px; height: 52px; flex: none;
+    border-radius: 14px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .pay-method-t {
+    font-family: var(--serif); font-weight: 800; font-size: 17px;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .pay-method-s { font-size: 13.5px; color: var(--ink-2); margin-top: 2px; }
+  .pay-secure {
+    font-size: 13px; color: var(--ink-2); font-weight: 600;
+    text-align: center; padding-top: 4px;
+  }
+  @media (max-width: 860px) {
+    .pay-cta { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; }
+  }
+
+  /* REVIEW VIDEOS */
+  .reviews {
+    margin-top: 120px;
+    padding-top: 80px;
+    border-top: 1px solid var(--hair);
+  }
+  .reviews-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+  .reviews-head .kicker { margin: 0 auto 20px; }
+  .reviews-head h3 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 4.4vw, 54px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+  }
+  .reviews-head h3 .it { color: var(--terracotta); }
+  .reviews-head p {
+    color: var(--ink-2);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .reviews-slider-wrap {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  .reviews-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 32px 12px;
+    scrollbar-width: none;
+  }
+  .reviews-slider::-webkit-scrollbar { display: none; }
+  .reviews-slider .review-card {
+    flex: 0 0 auto;
+    width: calc((100% - 104px) / 3);
+    scroll-snap-align: start;
+  }
+  @media (max-width: 1100px) {
+    .reviews-slider .review-card { width: calc((100% - 84px) / 2); }
+  }
+  @media (max-width: 720px) {
+    .reviews-slider { padding: 8px 20px 12px; gap: 16px; }
+    .reviews-slider .review-card { width: calc(100% - 56px); }
+  }
+  .review-card {
+    position: relative;
+    background: transparent;
+    border-radius: 24px;
+    overflow: visible;
+    transition: transform .4s ease;
+  }
+  .review-card:hover { transform: translateY(-4px); }
+  .review-video-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: #1a1a1a;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -24px rgba(214,63,217,0.25);
+  }
+  .review-video-wrap video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .review-play {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(0,0,0,0.45) 100%);
+    cursor: pointer;
+    transition: opacity .3s;
+    pointer-events: none;
+  }
+  .review-play.hidden { opacity: 0; }
+  .review-play svg {
+    width: 56px; height: 56px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 50%;
+    padding: 18px;
+    box-shadow: 0 8px 20px -6px rgba(0,0,0,0.35);
+  }
+  .review-mute {
+    position: absolute; bottom: 16px; right: 16px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background .2s;
+    z-index: 3;
+  }
+  .review-mute:hover { background: rgba(0,0,0,0.75); }
+  .review-mute svg { width: 20px; height: 20px; }
+  .review-meta {
+    padding: 22px 24px 26px;
+    background: #fff;
+  }
+  .review-name {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 800;
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+  }
+  .review-role {
+    font-size: 13.5px; color: var(--terracotta);
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+  .review-quote {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* FINAL CTA */
+  .final {
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 40px;
+    padding: 96px 64px;
+    margin: 0 32px 80px;
+    max-width: 1136px;
+    margin-left: auto; margin-right: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .final::before {
+    content: ""; position: absolute;
+    top: -100px; right: -100px;
+    width: 460px; height: 460px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(233,127,230,0.45), transparent 65%);
+    pointer-events: none;
+  }
+  .final::after {
+    content: ""; position: absolute;
+    bottom: -120px; left: -80px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(214,63,217,0.4), transparent 65%);
+    pointer-events: none;
+  }
+  .final-inner { position: relative; z-index: 1; max-width: 760px; }
+  .final h2 {
+    font-family: var(--serif); font-weight: 800;
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin: 22px 0 24px;
+    color: #fff;
+  }
+  .final h2 .it { font-style: normal; color: var(--terracotta-2); font-weight: 800; }
+  .final p {
+    font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.7);
+    max-width: 560px; margin: 0 0 40px;
+  }
+  .final .kicker { background: rgba(233,127,230,0.18); color: var(--terracotta-2); }
+  .final .kicker::before { background: var(--terracotta-2); }
+  .final .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    box-shadow: 0 16px 36px -10px rgba(214,63,217,0.6);
+  }
+  .final .btn-primary:hover {
+    background: var(--terracotta-2);
+    color: #fff;
+  }
+  @media (max-width: 720px) {
+    .final { padding: 56px 32px; margin: 0 16px 60px; border-radius: 28px; }
+  }
+
+  /* BONUS */
+  .bonus {
+    margin-top: 48px;
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 28px; align-items: start;
+    padding: 32px;
+    background: rgba(233,127,230,0.12);
+    border: 1px solid rgba(233,127,230,0.25);
+    border-radius: 24px;
+    position: relative; z-index: 1;
+  }
+  .bonus-icon {
+    width: 64px; height: 64px; border-radius: 18px;
+    background: var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+  }
+  .bonus-label {
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    color: var(--terracotta-2); font-weight: 700; margin-bottom: 10px;
+  }
+  .bonus-title {
+    font-family: var(--serif); font-size: 24px; font-weight: 800;
+    margin: 0 0 14px; color: #fff; letter-spacing: -0.02em;
+  }
+  .bonus ul {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 10px;
+  }
+  .bonus li {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px; line-height: 1.55;
+    padding-left: 18px; position: relative;
+  }
+  .bonus li::before {
+    content: "—"; position: absolute; left: 0;
+    color: var(--terracotta-2);
+  }
+  @media (max-width: 600px) {
+    .bonus { grid-template-columns: 1fr; }
+  }
+
+  /* FOOTER */
+  footer.foot {
+    padding: 40px 32px 60px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--hair);
+  }
+  footer.foot .brand-foot {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+  footer.foot .brand-foot i { color: var(--terracotta); font-style: normal; }
+
+  /* gentle reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">stretching <i>by kseniia</i></div>
+    <div class="nav-links">
+      <a href="#why">Чому</a>
+      <a href="#lessons">Уроки</a>
+      <a href="#about">Про мене</a>
+      <a href="#story">Відгуки</a>
+    </div>
+    <a class="nav-cta" href="https://secure.wayforpay.com/button/b9cd99d8f92b9" target="_blank" rel="noopener">Отримати доступ</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Онлайн-курс · 3 уроки</div>
+        <h1 class="headline">
+          Три повних<br />
+          тренування <span class="it">стретчинг</span><br />
+          <span class="amp">&amp;</span> calm down
+        </h1>
+        <p class="hero-lede">
+          Мрієш про гнучке, здорове тіло, але не можеш знайти професійну систему?
+          Без складних елементів і шалених навантажень — лише поступова, безпечна
+          та ефективна робота з тілом. Я покажу тобі, як це можливо.
+        </p>
+        <div class="cta-row">
+          <a class="btn-primary" href="https://secure.wayforpay.com/button/b9cd99d8f92b9" target="_blank" rel="noopener">
+            Отримати доступ
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 7h15M10 1l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <span class="price-tag">Доступ <b>назавжди</b> · в будь-який час</span>
+        </div>
+      </div>
+      <div class="hero-img reveal">
+        <div class="hero-photo" style="background-image: url('hero-main.jpg'); background-position: center 65%;"></div>
+        <span class="badge">3 повних уроки</span>
+        <span class="badge b2">20–40 хв</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">переваги</div>
+      <h2 class="section-title">Чому саме <span class="it">ці уроки?</span></h2>
+      <p class="section-sub">Система побудована так, щоб ти могла почати — й залишитись. М'яко, з результатом, без болю та перевантажень.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-emoji">🌱</div>
+        <h3 class="why-title">Почати можна з нуля</h3>
+        <p class="why-text">Підійде навіть якщо ви негнучкі та ніколи не займались розтяжкою.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-emoji">⏱</div>
+        <h3 class="why-title">Короткі заняття</h3>
+        <p class="why-text">Тренування тривають 20–40 хвилин і легко вписуються у ваш день.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-emoji">✨</div>
+        <h3 class="why-title">Чітка система</h3>
+        <p class="why-text">Ви просто відкриваєте урок і робите вправи крок за кроком.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="block problems-wrap" id="problems">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">знайомо?</div>
+      <h2 class="section-title">Можливо <span class="it">ви стикались</span> із цим?</h2>
+      <p class="section-sub">Якщо хоча б одне з цього про тебе — цей курс створений саме для тебе.</p>
+    </div>
+    <div class="problems-list">
+      <div class="problem reveal">
+        <div class="p-num">01</div>
+        <div class="p-title">Ви давно хочете зайнятися собою</div>
+        <div class="p-desc">Але постійно відкладаєте і не можете почати.</div>
+      </div>
+      <div class="problem reveal">
+        <div class="p-num">02</div>
+        <div class="p-title">Вам здається, що тіло негнучке</div>
+        <div class="p-desc">Думаєте, що розтяжка підходить тільки тим, хто займався з дитинства.</div>
+      </div>
+      <div class="problem reveal">
+        <div class="p-num">03</div>
+        <div class="p-title">Ви боїтесь жорстких тренувань</div>
+        <div class="p-desc">Не хочете перевантаження, болю і виснаження.</div>
+      </div>
+      <div class="problem reveal">
+        <div class="p-num">04</div>
+        <div class="p-title">Ви не розумієте, з чого почати</div>
+        <div class="p-desc">В інтернеті багато вправ, але немає чіткої системи занять.</div>
+      </div>
+      <div class="problem reveal">
+        <div class="p-num">05</div>
+        <div class="p-title">Тренуєтесь по YouTube — без результату</div>
+        <div class="p-desc">Робите вправи з відео, але тіло не змінюється так, як хотілось би.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section class="block" id="lessons">
+  <div class="wrap">
+    <div class="lessons-head">
+      <div class="reveal">
+        <div class="kicker">програма курсу</div>
+        <h2 class="section-title">Три уроки —<br /><span class="it">одна система</span></h2>
+      </div>
+      <p class="section-sub reveal">
+        Кожен урок — це окрема цеглинка у фундамент твоєї гнучкості. Разом
+        вони формують повноцінну практику для тіла, розуму та відновлення.
+      </p>
+    </div>
+
+    <div class="lessons-stack">
+
+      <!-- 01 -->
+      <article class="lesson-card reveal">
+        <div class="lesson-header">
+          <div class="lesson-num">01</div>
+          <div class="lesson-tag">Активний стретчинг</div>
+        </div>
+        <div class="lesson-photo-frame">
+          <img src="lesson-photo-1.jpg" alt="Активний стретчинг" />
+        </div>
+        <div class="lesson-body">
+          <h3 class="lesson-title">Розвиток гнучкості та контролю</h3>
+          <p class="lesson-intro">
+            Активний стретчинг направлений на розвиток гнучкості, м'язового
+            контролю, сили антагоністів і стабільності тіла.
+          </p>
+          <ul class="lesson-list">
+            <li>Розігріти та підготувати тіло до глибокої роботи</li>
+            <li>Покращити гнучкість без ризику перенавантаження</li>
+            <li>Активувати м'язи-стабілізатори</li>
+            <li>Розвинути контроль руху та координацію</li>
+            <li>Збільшити амплітуду рухів у безпечному форматі</li>
+            <li>Зняти м'язову напругу та затиски</li>
+          </ul>
+          <div class="result-box">
+            <p class="result-label">Результат —</p>
+            <p class="result-text">
+              Підвищена гнучкість, кращий м'язовий контроль, стабільне та сильне
+              тіло, збільшена амплітуда рухів і зниження ризику травм.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="lesson-card reveal">
+        <div class="lesson-header">
+          <div class="lesson-num">02</div>
+          <div class="lesson-tag">Статичний стретчинг</div>
+        </div>
+        <div class="lesson-photo-frame">
+          <img src="lesson-photo-2.jpg" alt="Статичний стретчинг" />
+        </div>
+        <div class="lesson-body">
+          <h3 class="lesson-title">Глибока робота з гнучкістю</h3>
+          <p class="lesson-sub">Затримуйся, дихай, дозволяй тілу розкритися</p>
+          <p class="lesson-intro">
+            Другий урок зосереджений на статичних позиціях, де ви затримуєтесь
+            у розтяжці й дозволяєте тілу розкритися.
+          </p>
+          <ul class="lesson-list">
+            <li>Довгі утримання для глибокої розтяжки</li>
+            <li>Робота з тазостегновими суглобами</li>
+            <li>Вправи для подовження м'язів ніг</li>
+            <li>Перші кроки до поздовжнього шпагату</li>
+            <li>Розкриття грудного відділу та плечей</li>
+            <li>Підвищення еластичності зв'язок і сухожиль</li>
+          </ul>
+          <div class="result-box">
+            <p class="result-label">Результат —</p>
+            <p class="result-text">
+              Відчутне збільшення амплітуди рухів, м'язи стають еластичнішими,
+              рух у суглобах — вільнішим.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="lesson-card reveal">
+        <div class="lesson-header">
+          <div class="lesson-num">03</div>
+          <div class="lesson-tag">Calm Down</div>
+        </div>
+        <div class="lesson-photo-frame">
+          <img src="lesson-photo-3.jpg" alt="Calm Down" />
+        </div>
+        <div class="lesson-body">
+          <h3 class="lesson-title">Розслаблення та відновлення</h3>
+          <p class="lesson-sub">Медитаційна практика через рух</p>
+          <p class="lesson-intro">
+            Завершальний урок — м'яке заняття для зняття напруги, заспокоєння
+            нервової системи та глибокого розслаблення.
+          </p>
+          <ul class="lesson-list">
+            <li>Дихальні практики для зняття стресу</li>
+            <li>М'яка розтяжка з елементами йоги</li>
+            <li>Розслаблення спини та шиї</li>
+            <li>Ідеальне завершення тренувального дня</li>
+            <li>Заспокоєння нервової системи</li>
+            <li>Покращення якості сну та відновлення</li>
+          </ul>
+          <div class="result-box">
+            <p class="result-label">Результат —</p>
+            <p class="result-text">
+              Повне розслаблення тіла, покращення якості сну та загальне
+              самопочуття. Ця система прирівнюється до медитаційної практики
+              через рух.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block about-wrap" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="kicker">автор курсу</div>
+        <h2 class="about-name">Ксенія <span class="it">Старкова</span></h2>
+        <div class="about-loc">Україна · Австрія · Європа</div>
+        <p class="about-role">танцівниця та хореографиня</p>
+        <p class="about-text">
+          Уже 16 років Ксенія живе танцем і понад 6 років навчає дівчат різного
+          рівня — від початківців до тих, хто прагне вийти на сцену.
+        </p>
+        <p class="about-text">
+          За її плечима — понад 100 учениць, десятки майстер-класів в Україні
+          та Європі, участь у міжнародних фестивалях. Професійна освіта в
+          Дніпровському арт-коледжі та навчання в Anton Bruckner Universität
+          (Австрія).
+        </p>
+        <p class="about-text">
+          Ці уроки — результат практичного досвіду, любові до танцю та бажання
+          допомогти кожній дівчині відчути впевненість у собі.
+        </p>
+        <div class="stat-row">
+          <div>
+            <div class="stat-num">16+</div>
+            <div class="stat-label">років у танці</div>
+          </div>
+          <div>
+            <div class="stat-num">100+</div>
+            <div class="stat-label">учениць</div>
+          </div>
+          <div>
+            <div class="stat-num">6+</div>
+            <div class="stat-label">років навчання</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-img reveal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOM STORY -->
+<section class="block" id="story">
+  <div class="wrap">
+    <div class="mom-grid">
+      <div class="reveal">
+        <div class="kicker">особиста історія</div>
+        <h3 class="pull">
+          Хочу поділитись особистим. Це моя <span class="it">мама — їй 45</span>.
+          Вона першою пройшла цей курс.
+        </h3>
+        <div class="mom-body">
+          <p>
+            Без ідеальної підготовки, без балетного минулого — сьогодні вона
+            у шпагаті, з красивою поставою, гнучкою спиною і — головне —
+            з любов'ю до себе.
+          </p>
+          <p>
+            Це доказ того, що тіло здатне на більше. У будь-якому віці.
+          </p>
+          <div class="mom-tag">Сьогодні вона відчуває легкість у тілі та має красиву поставу.</div>
+        </div>
+      </div>
+      <div class="mom-img reveal">
+      </div>
+    </div>
+
+    <div class="pay-cta reveal">
+      <div class="pay-text-col">
+        <div class="kicker">оплата курсу</div>
+        <h3 class="pay-title">Зручна та <span class="it">безпечна</span> оплата</h3>
+        <p class="pay-lede">
+          Ми підключили захищену систему оплати <strong>WayForPay</strong> — можна
+          оформити доступ карткою онлайн за пару хвилин. А ще все про курс можна
+          дізнатись і оплатити прямо в нашому <strong>Telegram-боті</strong>.
+        </p>
+        <div class="pay-cta-row">
+          <a class="btn-primary" href="https://secure.wayforpay.com/page?vkh=6a199641-34b8-4063-9f96-1eb322d1dba8" target="_blank" rel="noopener">
+            Оплатити через WayForPay
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 7h15M10 1l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="btn-outline" href="https://t.me/kseniiastarkova_stretching_bot?start=69f87ac8c93731077505028f" target="_blank" rel="noopener">
+            Дізнатись у боті
+          </a>
+        </div>
+      </div>
+      <div class="pay-methods">
+        <div class="pay-method">
+          <div class="pay-method-ic">💳</div>
+          <div class="pay-method-body">
+            <div class="pay-method-t">WayForPay</div>
+            <div class="pay-method-s">Безпечна оплата карткою онлайн</div>
+          </div>
+        </div>
+        <div class="pay-method">
+          <div class="pay-method-ic">🤖</div>
+          <div class="pay-method-body">
+            <div class="pay-method-t">Telegram-бот</div>
+            <div class="pay-method-s">Оплата та вся інформація про курс</div>
+          </div>
+        </div>
+        <div class="pay-secure">🔒 Платіж захищено · доступ відкриється одразу</div>
+      </div>
+    </div>
+
+    <div class="reviews reveal">
+      <div class="reviews-head">
+        <div class="kicker">живі відгуки</div>
+        <h3>Дівчата, які <span class="it">вже пройшли</span> курс</h3>
+        <p>Реальні враження від дівчат, які повірили в систему і відчули зміни у своєму тілі.</p>
+      </div>
+      <div class="reviews-slider-wrap">
+        <div class="reviews-slider" id="reviewsSlider">
+          <article class="review-card">
+            <div class="review-video-wrap">
+              <video muted loop playsinline preload="metadata" poster="review-3-poster.jpg" data-src="review-3.mp4" style="object-position: center;"></video>
+              <div class="review-play" data-play>
+                <svg viewBox="0 0 24 24" fill="#0E0F1A"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <button class="review-mute" data-mute aria-label="Увімкнути звук">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              </button>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-video-wrap">
+              <video muted loop playsinline preload="none" poster="review-1-poster.jpg" data-src="review-1.mp4"></video>
+              <div class="review-play" data-play>
+                <svg viewBox="0 0 24 24" fill="#0E0F1A"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <button class="review-mute" data-mute aria-label="Увімкнути звук">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              </button>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-video-wrap">
+              <video muted loop playsinline preload="none" poster="review-2-poster.jpg" data-src="review-2.mp4"></video>
+              <div class="review-play" data-play>
+                <svg viewBox="0 0 24 24" fill="#0E0F1A"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <button class="review-mute" data-mute aria-label="Увімкнути звук">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="block" style="padding-top: 20px; padding-bottom: 0;">
+  <div class="final reveal">
+    <div class="final-inner">
+      <div class="kicker" style="color: var(--terracotta-2)">твій старт</div>
+      <h2>Почни свою історію <span class="it">гнучкості</span> сьогодні</h2>
+      <p>Три уроки, які змінять твоє відчуття тіла — м'яко, безпечно і з задоволенням.</p>
+      <a class="btn-primary" href="https://secure.wayforpay.com/button/b9cd99d8f92b9" target="_blank" rel="noopener">
+        Отримати доступ
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 7h15M10 1l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <div class="bonus">
+        <div class="bonus-icon">🎁</div>
+        <div>
+          <div class="bonus-label">У подарунок · бонус</div>
+          <h4 class="bonus-title">Подкаст у комплекті</h4>
+          <ul>
+            <li>Коли використовувати і в чому різниця між двома видами розтяжки.</li>
+            <li>Що таке система Calm Down, для чого вона і що має в ній бути.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="brand-foot">stretching <i>by kseniia</i></div>
+  <div>© 2026 · Ксенія Старкова · усі права збережено</div>
+</footer>
+
+<script>
+  // gentle reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // smooth scroll for in-page nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Review video controls
+  const mutedIconSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>';
+  const unmutedIconSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+
+  document.querySelectorAll('.review-card').forEach(card => {
+    const video = card.querySelector('video');
+    const playOverlay = card.querySelector('[data-play]');
+    const muteBtn = card.querySelector('[data-mute]');
+    let loaded = false;
+
+    async function ensureLoaded() {
+      if (loaded) return;
+      loaded = true;
+      const src = video.dataset.src;
+      try {
+        const resp = await fetch(src);
+        const blob = await resp.blob();
+        video.src = URL.createObjectURL(blob);
+      } catch (e) {
+        // fallback to direct src
+        video.src = src;
+      }
+    }
+
+    // tap video or play overlay to play/pause
+    const togglePlay = async () => {
+      if (video.paused) {
+        await ensureLoaded();
+        // pause others
+        document.querySelectorAll('.review-card video').forEach(v => { if (v !== video) v.pause(); });
+        const p = video.play();
+        if (p && p.catch) p.catch(()=>{});
+        playOverlay.classList.add('hidden');
+      } else {
+        video.pause();
+        playOverlay.classList.remove('hidden');
+      }
+    };
+    playOverlay.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+    video.addEventListener('pause', () => playOverlay.classList.remove('hidden'));
+    video.addEventListener('play', () => playOverlay.classList.add('hidden'));
+
+    // mute toggle
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      muteBtn.innerHTML = video.muted ? mutedIconSVG : unmutedIconSVG;
+    });
+  });
+  // Reviews slider — native horizontal scroll, no controls needed.
+</script>
+
+</body>
+</html>
