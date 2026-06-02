@@ -2,6 +2,23 @@
 <html lang="uk">
 <head>
 <meta charset="utf-8" />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1251658296835222');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1251658296835222&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Стретчинг & Calm Down — Ксенія Старкова</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -277,8 +294,15 @@
   }
   .p-desc { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
   @media (max-width: 720px) {
-    .problem { grid-template-columns: 60px 1fr; }
-    .p-desc { grid-column: 1 / -1; padding-left: 60px; }
+    .problem {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 26px 0;
+    }
+    .problem:hover { padding-left: 0; }
+    .p-num { font-size: 22px; }
+    .p-title { font-size: 20px; grid-column: 1; }
+    .p-desc { grid-column: 1; padding-left: 0; margin-top: 6px; font-size: 15.5px; }
   }
 
   /* clean up old lesson-photos strip styles - not used */
@@ -804,6 +828,39 @@
   /* gentle reveal on scroll */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
   .reveal.in { opacity: 1; transform: none; }
+
+  /* ===== MOBILE / RESPONSIVE LAYER ===== */
+  @media (max-width: 760px) {
+    .wrap, .wrap-narrow { padding: 0 20px; }
+    .nav-inner { padding: 14px 20px; }
+    .brand { font-size: 17px; line-height: 1.1; }
+    .nav-cta { padding: 11px 18px; font-size: 13.5px; }
+
+    section.block { padding: 64px 0; }
+    .hero { padding: 48px 0 40px; }
+    h2.section-title { margin-top: 14px; }
+    .section-sub { font-size: 16px; }
+
+    .hero-lede { font-size: 16.5px; margin-bottom: 28px; }
+    .cta-row { gap: 14px; }
+    .cta-row .btn-primary, .cta-row .btn-outline { width: 100%; justify-content: center; }
+    .btn-primary { padding: 17px 28px; font-size: 15.5px; }
+    .btn-outline { padding: 15px 28px; font-size: 15.5px; }
+
+    .pay-cta-row { width: 100%; }
+    .pay-cta-row .btn-primary, .pay-cta-row .btn-outline { width: 100%; justify-content: center; }
+    .final .btn-primary { width: 100%; justify-content: center; }
+  }
+
+  @media (max-width: 420px) {
+    .wrap, .wrap-narrow { padding: 0 16px; }
+    .nav-inner { padding: 12px 16px; }
+    .brand { font-size: 16px; }
+    .nav-cta { padding: 10px 15px; font-size: 13px; }
+    h1.headline { font-size: clamp(38px, 12vw, 52px); }
+    section.block { padding: 52px 0; }
+    .final { padding: 44px 22px !important; margin: 0 12px 48px !important; }
+  }
 </style>
 </head>
 <body>
@@ -887,33 +944,33 @@
 <!-- PROBLEMS -->
 <section class="block problems-wrap" id="problems">
   <div class="wrap">
-    <div class="reveal">
+    <div>
       <div class="kicker">знайомо?</div>
       <h2 class="section-title">Можливо <span class="it">ви стикались</span> із цим?</h2>
       <p class="section-sub">Якщо хоча б одне з цього про тебе — цей курс створений саме для тебе.</p>
     </div>
     <div class="problems-list">
-      <div class="problem reveal">
+      <div class="problem">
         <div class="p-num">01</div>
         <div class="p-title">Ви давно хочете зайнятися собою</div>
         <div class="p-desc">Але постійно відкладаєте і не можете почати.</div>
       </div>
-      <div class="problem reveal">
+      <div class="problem">
         <div class="p-num">02</div>
         <div class="p-title">Вам здається, що тіло негнучке</div>
         <div class="p-desc">Думаєте, що розтяжка підходить тільки тим, хто займався з дитинства.</div>
       </div>
-      <div class="problem reveal">
+      <div class="problem">
         <div class="p-num">03</div>
         <div class="p-title">Ви боїтесь жорстких тренувань</div>
         <div class="p-desc">Не хочете перевантаження, болю і виснаження.</div>
       </div>
-      <div class="problem reveal">
+      <div class="problem">
         <div class="p-num">04</div>
         <div class="p-title">Ви не розумієте, з чого почати</div>
         <div class="p-desc">В інтернеті багато вправ, але немає чіткої системи занять.</div>
       </div>
-      <div class="problem reveal">
+      <div class="problem">
         <div class="p-num">05</div>
         <div class="p-title">Тренуєтесь по YouTube — без результату</div>
         <div class="p-desc">Робите вправи з відео, але тіло не змінюється так, як хотілось би.</div>
@@ -1123,7 +1180,7 @@
           дізнатись і оплатити прямо в нашому <strong>Telegram-боті</strong>.
         </p>
         <div class="pay-cta-row">
-          <a class="btn-primary" href="https://secure.wayforpay.com/page?vkh=6a199641-34b8-4063-9f96-1eb322d1dba8" target="_blank" rel="noopener">
+          <a class="btn-primary" href="https://secure.wayforpay.com/button/b9cd99d8f92b9" target="_blank" rel="noopener">
             Оплатити через WayForPay
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M1 7h15M10 1l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
